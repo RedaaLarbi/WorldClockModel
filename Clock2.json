@@ -1,0 +1,317 @@
+{
+    "projectFileVersion": "2022-10-01-preview",
+    "stringIndexType": "Utf16CodeUnit",
+    "metadata": {
+        "projectKind": "Conversation",
+        "settings": {
+            "confidenceThreshold": 0,
+            "normalizeCasing": false
+        },
+        "projectName": "Clock2",
+        "multilingual": false,
+        "description": "",
+        "language": "en-us"
+    },
+    "assets": {
+        "projectKind": "Conversation",
+        "intents": [
+            {
+                "category": "None"
+            },
+            {
+                "category": "GetTime"
+            },
+            {
+                "category": "GetDay"
+            },
+            {
+                "category": "Getdate"
+            }
+        ],
+        "entities": [
+            {
+                "category": "Location",
+                "compositionSetting": "combineComponents"
+            },
+            {
+                "category": "Weekday",
+                "compositionSetting": "combineComponents",
+                "list": {
+                    "sublists": [
+                        {
+                            "listKey": "Saturday",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "Saturday",
+                                        "Sat"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Fridays",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "Fridays",
+                                        "Fri"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Thursday",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "Thursday",
+                                        "Thu",
+                                        "Thurs"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Wednesday ",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "Wednesday",
+                                        "wed",
+                                        "Weds"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Tuesday",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "Tuesday",
+                                        "Tue"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Monday",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "Monday",
+                                        "Mon"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Sunday",
+                            "synonyms": [
+                                {
+                                    "language": "en-us",
+                                    "values": [
+                                        "Sunday",
+                                        "Sun"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "category": "Date",
+                "compositionSetting": "combineComponents",
+                "prebuilts": [
+                    {
+                        "category": "DateTime"
+                    }
+                ]
+            }
+        ],
+        "utterances": [
+            {
+                "text": "What day was January 1st 1901?",
+                "language": "en-us",
+                "intent": "GetDay",
+                "entities": [
+                    {
+                        "category": "Date",
+                        "offset": 13,
+                        "length": 16
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "What day will it be on December 31st? 2099?",
+                "language": "en-us",
+                "intent": "GetDay",
+                "entities": [
+                    {
+                        "category": "Date",
+                        "offset": 32,
+                        "length": 10
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "What would be the date on Thurs?",
+                "language": "en-us",
+                "intent": "Getdate",
+                "entities": [
+                    {
+                        "category": "Weekday",
+                        "offset": 26,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "What date will it be on Friday?",
+                "language": "en-us",
+                "intent": "Getdate",
+                "entities": [
+                    {
+                        "category": "Weekday",
+                        "offset": 24,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "What date was on Saturday?",
+                "language": "en-us",
+                "intent": "Getdate",
+                "entities": [
+                    {
+                        "category": "Weekday",
+                        "offset": 16,
+                        "length": 10
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Tell me the time in Paris?",
+                "language": "en-us",
+                "intent": "GetTime",
+                "entities": [
+                    {
+                        "category": "Location",
+                        "offset": 20,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "What time is it in New York?",
+                "language": "en-us",
+                "intent": "GetTime",
+                "entities": [
+                    {
+                        "category": "Location",
+                        "offset": 18,
+                        "length": 10
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "What time is it in London? ",
+                "language": "en-us",
+                "intent": "GetTime",
+                "entities": [
+                    {
+                        "category": "Location",
+                        "offset": 19,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "What is today's date?",
+                "language": "en-us",
+                "intent": "Getdate",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What's the date?",
+                "language": "en-us",
+                "intent": "Getdate",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What date is it?",
+                "language": "en-us",
+                "intent": "Getdate",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What day of the week today?",
+                "language": "en-us",
+                "intent": "GetDay",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What's the day today?",
+                "language": "en-us",
+                "intent": "GetDay",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What day is it?",
+                "language": "en-us",
+                "intent": "GetDay",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Tell me the time?",
+                "language": "en-us",
+                "intent": "GetTime",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What time is it?",
+                "language": "en-us",
+                "intent": "GetTime",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What's the time?",
+                "language": "en-us",
+                "intent": "GetTime",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "What is the time?",
+                "language": "en-us",
+                "intent": "GetTime",
+                "entities": [],
+                "dataset": "Train"
+            }
+        ]
+    }
+}
